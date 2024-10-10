@@ -95,6 +95,16 @@ min_temps = [
 # The use of len() is fine
 # You can do this in two individual loops, or a single loop if you wish 
 
+max_temp = 0
+for i in max_temps:
+    if i > max_temp:
+        max_temp = i
+
+min_temp = 0
+for a in min_temps:
+    if a < min_temp:
+        min_temp = a
+
 print(f"Max temp = {max_temp}")
 print(f"Min temp = {min_temp}")
 
@@ -104,11 +114,35 @@ numbers = [-61, -76, 94, 21, 97, -4, 21, 56, -26, 9, 100, 56, -7, -32, 60, -68, 
 # You should print the number and the result within an f-string 
 # Example output: 83 is positive
 
+pos_count = 0
+neg_count = 0
+zero_count = 0
+
+for number in numbers:
+    if number < 0:
+        neg_count = neg_count + 1
+    elif number == 0:
+        zero_count = zero_count + 1
+    else:
+        pos_count = pos_count + 1
+
 print(f'There are {pos_count} positive numbers')
 print(f'There are {neg_count} negative numbers')
-print(f"Zero occurred {zero_count} time(s)")
+print(f"Zero occurred {zero_count} time")
+
+
+
 # Given the same numbers list, give the sum of all positive numbers, and the sum of all negative numbers
 # This should be done within a single loop
+
+pos_sum = 0
+neg_sum = 0
+
+for unit in numbers:
+    if unit < 0:
+        neg_sum = neg_sum + unit
+    else:
+        pos_sum = pos_sum + unit
 
 print(f"Sum of positive numbers {pos_sum}")
 print(f"Sum of negative numbers {neg_sum}")
